@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { appearance } from '@/routes';
 import { edit as editPassword } from '@/routes/password';
 import { edit } from '@/routes/profile';
+import { edit as editCompanySetting } from '@/routes/company';
 import { type NavItem, type BreadcrumbItem } from '@/types';
 import { Link } from '@inertiajs/react';
 // import { type PropsWithChildren } from 'react';
@@ -25,6 +26,11 @@ const sidebarNavItems: NavItem[] = [
     {
         title: 'Appearance',
         href: appearance(),
+        icon: null,
+    },
+    {
+        title: 'Company',
+        href: editCompanySetting(),
         icon: null,
     },
 ];

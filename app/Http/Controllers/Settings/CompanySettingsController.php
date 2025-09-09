@@ -17,7 +17,7 @@ class CompanySettingsController extends Controller
      */
     public function edit(CompanySetting $settings): Response
     {
-        return Inertia::render('settings/company',[
+        return Inertia::render('settings/company', [
             'settings' => $settings
         ]);
     }
@@ -28,17 +28,19 @@ class CompanySettingsController extends Controller
             $validated = $request->validated();
             $settings->fill($validated)->save();
 
-            return $this->withSuccessToast(
-                'Company Settings Updated',
-                'Your company settings have been successfully updated.',
-                4000
-            );
+            return to_route('company.edit')->with('toast', [
+                'title' => 'Company settings updated',
+                'description' => 'Your company settings successfully updated.',
+                'type' => 'success',
+            ]);
+
         } catch (\Exception $e) {
-            return $this->withErrorToast(
-                'Update Failed',
-                'There was an error updating your company settings. Please try again.',
-                5000
-            );
+            return back()->with('toast', [
+                'title' => 'Error',
+                'description' => 'An error occurred while updating company settings: ' . $e->getMessage(),
+                'type' => 'error',
+                'duration' => 8000,
+            ]);
         }
     }
 
