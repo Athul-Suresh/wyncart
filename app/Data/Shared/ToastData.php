@@ -6,6 +6,7 @@ namespace App\Data\Shared;
 
 use App\Enums\Shared\ToastType;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

@@ -36,8 +36,14 @@ class ProfileController extends Controller
         }
 
         $request->user()->save();
+        // return to_route('profile.edit')->with('toast', 'profile-updated');
 
-        return to_route('profile.edit');
+        return back()
+            ->with('toast', [
+                'title' => 'Profile updated',
+                'description' => 'Your profile have been successfully updated.',
+                'type' => 'success',
+            ]);
     }
 
     /**
