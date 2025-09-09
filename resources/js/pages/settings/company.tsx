@@ -1,7 +1,7 @@
 import CompanySettingsController from '@/actions/App/Http/Controllers/Settings/CompanySettingsController';
 import { type BreadcrumbItem } from '@/types/index';
 import { type PageProps } from '@/types/globals';
-import { Form, Head, usePage } from '@inertiajs/react';
+import { Form, Head } from '@inertiajs/react';
 
 import HeadingSmall from '@/components/heading-small';
 import InputError from '@/components/input-error';
