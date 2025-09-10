@@ -1,5 +1,6 @@
 import { InertiaLinkProps } from '@inertiajs/react';
 import { LucideIcon } from 'lucide-react';
+import { Dispatch, SetStateAction } from "react";
 
 export interface BreadcrumbItem {
     title: string;
@@ -17,3 +18,12 @@ export interface NavItem {
     icon?: LucideIcon | null;
     isActive?: boolean;
 }
+
+
+export type SetState<T> = Dispatch<SetStateAction<T>>;
+
+export type SelectOption = {
+  value: string;
+  label: string;
+  icon?: React.ComponentType<{ className?: string }>;
+};

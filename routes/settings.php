@@ -3,6 +3,7 @@
 use App\Http\Controllers\Settings\CompanySettingsController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
+use App\Http\Controllers\Settings\SiteSettingsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -27,7 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::get('settings/company', [CompanySettingsController::class, 'edit'])->name('company.edit');
     Route::patch('settings/company', [CompanySettingsController::class, 'update'])->name('company.update');
 
-
+    Route::get('settings/site', [SiteSettingsController::class, 'edit'])->name('site.edit');
+    Route::patch('settings/site', [SiteSettingsController::class, 'update'])->name('site.update');
 
 
 });

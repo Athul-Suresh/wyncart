@@ -6,9 +6,10 @@ import { appearance } from '@/routes';
 import { edit as editPassword } from '@/routes/password';
 import { edit } from '@/routes/profile';
 import { edit as editCompanySetting } from '@/routes/company';
+import { edit as editSiteSetting } from '@/routes/site';
 import { type NavItem, type BreadcrumbItem } from '@/types';
 import { Link } from '@inertiajs/react';
-// import { type PropsWithChildren } from 'react';
+
 import { type PageProps } from '@/types/globals.js';
 import AppLayout from '../app-layout';
 
@@ -31,6 +32,11 @@ const sidebarNavItems: NavItem[] = [
     {
         title: 'Company',
         href: editCompanySetting(),
+        icon: null,
+    },
+    {
+        title: 'Site',
+        href: editSiteSetting(),
         icon: null,
     },
 ];
@@ -56,7 +62,7 @@ export function SettingsLayout({
             breadcrumbs={breadcrumbs}
             {...props}
         >
-            <div className="px-4 py-6">
+            <div className="px-4 py-2">
                 <Heading title="Settings" description="Manage your profile and account settings" />
 
                 <div className="flex flex-col lg:flex-row lg:space-x-12">
@@ -83,8 +89,8 @@ export function SettingsLayout({
 
                     <Separator className="my-6 lg:hidden" />
 
-                    <div className="flex-1 md:max-w-2xl">
-                        <section className="max-w-xl space-y-12">
+                    <div className="flex-1 md:max-w-2xl lg:max-w-3xl ">
+                        <section >
                             {children}
                             </section>
                     </div>

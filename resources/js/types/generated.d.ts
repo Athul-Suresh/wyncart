@@ -49,6 +49,29 @@ declare namespace App.Data.Settings {
         company_longitude: number | null;
         company_address: string | null;
     };
+    export type SiteSetting = {
+        site_date_format: string;
+        site_time_format: string;
+        site_default_timezone: string;
+        site_default_currency: string;
+        site_default_currency_symbol: string;
+        site_currency_position: string;
+        site_digit_after_decimal_point: string;
+        site_email_verification: boolean;
+        site_phone_verification: boolean;
+        site_default_language: string;
+        site_android_app_link: string | null;
+        site_ios_app_link: string | null;
+        site_copyright: string;
+        site_language_switch: boolean;
+        site_app_debug: boolean;
+        site_auto_update: boolean;
+        site_online_payment_gateway: boolean;
+        site_default_sms_gateway: string | null;
+        site_cash_on_delivery: boolean;
+        site_non_purchase_product_maximum_quantity: number;
+        site_is_return_product_price_add_to_credit: boolean;
+    };
 }
 declare namespace App.Data.Shared {
     export type SharedInertiaData = {
