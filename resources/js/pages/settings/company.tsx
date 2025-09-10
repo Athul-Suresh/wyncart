@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { SettingsLayout } from '@/layouts/settings/setting-layout';
 import { edit } from '@/routes/company';
+import { Loader2 } from 'lucide-react';
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -211,7 +212,8 @@ export default function CompanySetting({ settings }: CompanySettingProp) {
                             </div>
                             <div className="flex items-center gap-4">
                                 <Button type="submit" variant="default" disabled={processing}>
-                                    Save Changes
+                                    {processing && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                    Save
                                 </Button>
                             </div>
                         </>
